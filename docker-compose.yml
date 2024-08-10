@@ -5,7 +5,7 @@ services:
       dockerfile: ./bot_service/Dockerfile
     restart: unless-stopped
 
-  send-message-service:
+  collector-service:
     build:
        context: ./
        dockerfile: ./collector_service/Dockerfile
