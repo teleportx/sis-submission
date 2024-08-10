@@ -4,3 +4,4 @@ asyncpg==0.29.0
 aiogram==3.10.0
 beautifulsoup4==4.12.3
 aiohttp==3.9.5
+lxml==5.2.2
