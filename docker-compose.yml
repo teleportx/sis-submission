@@ -1,0 +1,12 @@
+services:
+  bot-service:
+    build:
+      context: ./
+      dockerfile: ./bot_service/Dockerfile
+    restart: unless-stopped
+
+  send-message-service:
+    build:
+       context: ./
+       dockerfile: ./collector_service/Dockerfile
+    restart: unless-stopped
