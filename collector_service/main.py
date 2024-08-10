@@ -22,12 +22,7 @@ bot = Bot(
 
 
 async def update_table():
-    try:
-        table = await parser.parse()
-
-    except asyncio.exceptions.TimeoutError:
-        logging.error('Failed access to the table. Skipping updating.')
-        return
+    table = await parser.parse()
 
     prs_saved = await Task.filter()
 
@@ -66,9 +61,15 @@ async def main():
 
     while True:
         logging.info('Updating table...')
-        await update_table()
-        logging.info('Table updating completed.')
+        try:
+            await update_table()
 
+        except asyncio.exceptions.TimeoutError:
+            logging.error('Failed access to the table. Skipping updating.')
+            await asyncio.sleep(10)
+            continue
+
+        logging.info('Table updating completed.')
         await asyncio.sleep(120)
 
 
