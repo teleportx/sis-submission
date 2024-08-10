@@ -1,17 +1,20 @@
+import logging
 import sys
-
-from aiogram.client.default import DefaultBotProperties
-
-import db
 
 sys.path.append('..')
 
+from aiogram.client.default import DefaultBotProperties
+from aiogram import Bot, Dispatcher
+
+import db
 import asyncio
 
-from aiogram import Bot, Dispatcher
 
 import config
 import handlers
+
+logging.basicConfig(format="%(asctime)s %(levelname)s: %(message)s", level=logging.INFO)
+
 
 dp = Dispatcher()
 

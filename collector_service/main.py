@@ -13,7 +13,7 @@ import db
 import parser
 from db.User import Task, User
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(format="%(asctime)s %(levelname)s: %(message)s", level=logging.INFO)
 
 bot = Bot(
     token=config.token,
