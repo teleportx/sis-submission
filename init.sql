@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS "task" (
+    "name" VARCHAR(256) NOT NULL  PRIMARY KEY
+);
+
+CREATE TABLE IF NOT EXISTS "user" (
+    "uid" BIGSERIAL NOT NULL PRIMARY KEY,
+    "subscription" VARCHAR(64)
+);
